@@ -1,4 +1,3 @@
-import account
 from django.shortcuts import render
 from account.models import Account
 

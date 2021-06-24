@@ -1,14 +1,11 @@
 from django.contrib import admin
-from django.urls import path
-from personal.views import (
-    home_screen_view,
-)
-from account.views import (
-    registration_view,
-)
+from django.urls import path, include
+# from personal.views import (
+#     home_screen_view,
+# )
 
 urlpatterns = [
-    path('account/', registration_view, name='create-account'),
+    path('register/', include('account.urls')),
+    path('', include('personal.urls')),
     path('admin/', admin.site.urls),
-    path('', home_screen_view, name='home'),
 ]
