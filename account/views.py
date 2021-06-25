@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import auth
-from account.form import AccountAuthenticationForm, RegistrationForm
+from account.form import AccountAuthenticationForm, AccountUpdateForm, RegistrationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from account.form import RegistrationForm
@@ -56,3 +56,33 @@ def login_view(request):
 	context['login_form'] = form
 
 	return render(request, 'account/login.html', context)
+
+
+def account_view(request):
+
+    if not request.user.is_authenticated:
+        return redirect('login')
+    
+    context = {}
+
+    if request.method == "POST":
+        form = AccountUpdateForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.initial = {
+					"email": request.POST['email'],
+					"username": request.POST['username'],
+			}
+            form.save()
+            context['success_message'] = "Updated"
+    else:
+        form = AccountUpdateForm(
+            initial={
+					"email": request.user.email, 
+					"username": request.user.username,
+				}
+        )
+    
+    context['account_form'] = form
+    return render(request, 'account/account.html', context)
+        
+

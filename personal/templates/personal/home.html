@@ -1,15 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <h1> This is the body </h1>
-        <p>Here is where you put stuff</p>
-        
-        
-        {% for item in accounts %}
-            <!-- <p>{{item}}</p> -->
-            {% include 'personal/snippets/body_snippet.html' with value=item %}
-        {% endfor %}
+    <div class="pricing-header px-5 py-3 pt-md-5 pb-md-7 mx-auto text-center">
+        <h1 class="display-4">Coding With Edward</h1>
+        <p class="lead">In this course you'll learn how to build a simple blog with user registration and blog CRUD functionality. Django is a powerful 
+            framework and you'll see why in this course.</p>
+            <button type="button" class="btn btn-primary">Create Post</button>
     </div>
+
+    <div class="container">
+        <div class="d-flex flex-column"> <!-- Flex box -->
+            <h4>Registered Users:</h4>
+            {% for item in accounts %}
+                <!-- <p>{{item}}</p> -->
+                {% include 'personal/snippets/body_snippet.html' with value=item %}
+            {% endfor %}
+        
+        </div>
+    </div>
+
 {% endblock %}
     
