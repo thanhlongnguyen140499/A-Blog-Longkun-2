@@ -10,12 +10,14 @@
 
     <div class="container">
         <div class="d-flex flex-column"> <!-- Flex box -->
-            <h4>Registered Users:</h4>
-            {% for item in accounts %}
-                <!-- <p>{{item}}</p> -->
-                {% include 'personal/snippets/body_snippet.html' with value=item %}
-            {% endfor %}
-        
+            
+            {% if request.user.is_authenticated %}
+                <h4>Registered Users:</h4>
+                {% for item in accounts %}
+                    <!-- <p>{{item}}</p> -->
+                    {% include 'personal/snippets/body_snippet.html' with value=item %}
+                {% endfor %}    
+            {% endif %}
         </div>
     </div>
 
