@@ -14,13 +14,30 @@
                     <form method="POST" action="" name="account_form">
                         {% csrf_token %}
                         <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input value="{{account_form.initial.email}}" type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Username</label>
                             <input value="{{account_form.initial.username}}" type="text"  name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input value="{{account_form.initial.email}}" type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="exampleInputEmail1">Created at :</label>
+                            <label for="exampleInputEmail1">{{date_joined}}</label>
                         </div>
+                        
+                        
+                        {% if success_message %}
+                            <p style="color: green; text-align: center;">
+                                {{success_message}}
+                            </p>
+                        {% else %}
+                            <p style="color: red; text-align: center;">
+                                Error
+                            </p>
+                        {% endif %}
+                            
+
                         <div class="col-md-12 text-center mb-3">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
                         </div>

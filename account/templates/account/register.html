@@ -1,13 +1,47 @@
 {% extends 'base.html' %}
-
-
+{% load static %}
 {% block content %}
-    <h2>Register Form</h2>   
-    <form method="POST">
-        {% csrf_token %}
-        {{ registration_form.as_p}}
-
-        <button type="submit">Register</button>
-    </form>
+    <link rel="stylesheet" href="{% static 'blog/css/login.css' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <div class="myform form ">
+                    <div class="logo mb-3">
+                        <div class="col-md-12 text-center">
+                            <h1>Register Account</h1>
+                        </div>
+                    </div>
+                    <form action="" name="register" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="username" name="username"  class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="password" name="password1" id="password1"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Confirm Password</label>
+                            <input type="password" name="password2" id="password2"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
+                        </div>
+                        <div class="col-md-12 text-center mb-3">
+                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+                        </div>
+                        <div class="col-md-12 ">
+                            <div class="form-group">
+                                <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </div>
 {% endblock content %}
     

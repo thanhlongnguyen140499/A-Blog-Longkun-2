@@ -73,16 +73,17 @@ def account_view(request):
                 "username": request.POST['username'],
 			}
             form.save()
-            context['success_message'] = "Updated"
+            context['success_message'] = "Updated Successfully "
     else:
         form = AccountUpdateForm(
             initial={
-					"email": request.user.email, 
-					"username": request.user.username,
-				}
+                "email": request.user.email, 
+                "username": request.user.username,
+			}
         )
     
     context['account_form'] = form
+    context['date_joined'] = request.user.date_joined
     return render(request, 'account/account.html', context)
         
 
