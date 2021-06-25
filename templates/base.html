@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogs</title>
-    <div style="border: 2px solid #000;">
-        <h1>This's is header</h1>
+    <div>
+        {% if request.user.is_authenticated %}
+            <p><a href="{% url 'home' %}">Homepage</a> | <a href="{% url 'logout' %}">Logout</a></p>
+            <p>Hello, {{request.user.username}}</p>
+        {% else %}
+            <p>
+                <a href="{% url 'home' %}">Homepage</a> |
+                <a href="{% url 'register' %}">Register | 
+                <a href="{% url 'login' %}">Login</a></a>
+            </p>
+        {% endif %}
     </div>
+    <hr>
 </head>
 <body>
     
@@ -16,7 +26,8 @@
     {% endblock %}
         
 </body>
-    <div style="border: 2px solid #000;">
-        <footer>This's the footer</footer>
-    </div>
+    <footer>
+        <hr>
+        <p>CodingWithEdward Blog Course | 2021</p>
+    </footer>
 </html>
