@@ -9,7 +9,7 @@ from account.form import RegistrationForm
 def registration_view(request):
 	context = {}
 	if request.method == "POST":
-		form = RegistrationForm(request.POST, instance=request.user)
+		form = RegistrationForm(request.POST)
 		if form.is_valid():
 			form.save()
 			email = form.cleaned_data.get('email')
@@ -42,9 +42,9 @@ def login_view(request):
 	if request.method == 'POST':
 		form = AccountAuthenticationForm(request.POST)
 		if form.is_valid():
-			username = request.POST['username']
+			email = request.POST['email']
 			password = request.POST['password']
-			user = authenticate(username=username, password=password)
+			user = authenticate(email=email, password=password)
 
 			if user:
 				login(request, user)
