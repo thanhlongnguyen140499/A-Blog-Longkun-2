@@ -1,3 +1,4 @@
+from django import urls
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
@@ -7,6 +8,7 @@ from django.conf import settings
 urlpatterns = [
     path('account/', include('account.urls')),
     path('', include('personal.urls')),
+    path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
 
     # Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)

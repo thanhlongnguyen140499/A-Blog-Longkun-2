@@ -1,0 +1,31 @@
+@media (max-width: 768px) { 
+    .right-column{
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 768px) { 
+    .right-column{
+        margin-left: 20px;
+    }
+}
+
+.blog-post-container{
+    background-color: #fff;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #000;
+}
+.create-post-bar{
+    background-color: #fff;
+    margin-bottom:20px;
+    border: 1px solid #000;
+}
+
+.left-column{
+    padding:0px;
+}
+
+.right-column{
+    padding:0px;
+}
