@@ -2,13 +2,15 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'blog/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/logo.css' %}">
     
 <div class="container">
     <div class="row">
         <div class="col-md-5 mx-auto">
-            <div id="first">
+        <div id="first">
                 <div class="myform form ">
                         <div class="logo mb-3">
+                            <img src="{% static 'company-logo.png' %}" alt="company-logo" class="company-logo">
                             <div class="col-md-12 text-center">
                                 <h1>Login</h1>
                             </div>
