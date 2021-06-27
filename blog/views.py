@@ -1,7 +1,7 @@
-import blog
+from operator import pos
+from django.db.models.query import QuerySet
 from blog.models import BlogPost
-from enum import auto
-from django.forms import forms
+from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from blog.forms import CreateBlogPostForm, UpdateBlogPostForm
 from account.models import Account
@@ -66,3 +66,17 @@ def edit_blog_view(request, slug):
     context['form'] = form
     return render(request, 'blog/edit_blog.html', context)
     
+
+def get_blog_queryset(query=None):
+    queryset = []
+    queries = query.split(" ") # python install 2021 = [python, install, 2021]
+    for q in queries:
+        posts = BlogPost.objects.filter(
+            Q(title__icontains=q) |
+            Q(body__icontains=q) 
+        ).distinct()
+
+        for post in posts:
+            queryset.append(post)
+
+    return list(set(queryset))

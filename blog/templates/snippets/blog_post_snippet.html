@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row">
 		<!-- Blog Post -->
-		<div class="card m-auto">
+		<div class="card m-auto shadow-lg">
 			<a href="{% url 'blog:detail_blog' post.slug %}">
 				<img class="card-img-top" src="{{blog_post.image.url}}">
 			</a>
@@ -17,7 +17,7 @@
 					<a href="{% url 'blog:edit_blog' blog_post.slug %}" class="btn btn-primary">Update</a>
 				{% endif %}
 			</div>
-			<div class="card-footer text-muted">
+			<div class="card-footer text-muted" style="background: none;">
 			  Updated on {{blog_post.date_updated}} by {{blog_post.author}}
 			</div>
 		</div>

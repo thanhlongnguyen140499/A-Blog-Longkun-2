@@ -6,7 +6,7 @@
         <div class="row">
 
             <!-- Blog post -->
-            <div class="card m-auto">
+            <div class="card m-auto shadow-lg">
                 <img class="card-img-top" src="{{blog_post.image.url}}" alt="post-image">
                 <div class="card-body my-2">
                     <h2 class="card-title">{{blog_post.title}}</h2>
@@ -17,7 +17,7 @@
                     {% endif %}
                         
                 </div>
-                <div class="card-footer text-muted">
+                <div class="card-footer text-muted" style="background: none;">
                     Updated on {{blog_post.date_updated}} by {{blog_post.author}}
                 </div>
             </div>
