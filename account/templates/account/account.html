@@ -52,5 +52,27 @@
             </div>
         </div>
     </div>
+
+    <div class="container mt-4 p-4">
+        <div class="row">
+            <div class="blog-posts">
+                <h3 class="mb-3 font-weight-normal">Blog posts:</h3>
+                
+                {% if blog_posts %}
+                    <ul>
+                        {% for post in blog_posts %}
+                            <a href="{% url 'blog:detail_blog' post.slug %}" style="text-decoration: none;">
+                                <li class="list-group-item">{{post}}</li>
+                            </a>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>You have no blog posts. Create a post <a href="{% url 'blog:create_blog' %}">Here</a></p>
+                {% endif %}
+                    
+                    
+            </div>
+        </div>
+    </div>
 {% endblock content %}
     

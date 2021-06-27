@@ -6,11 +6,11 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 
 urlpatterns = [
-    path('account/', include('account.urls')),
     path('', include('personal.urls')),
+    path('account/', include('account.urls')),
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
-
+    
     # Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'), 
         name='password_change_done'),

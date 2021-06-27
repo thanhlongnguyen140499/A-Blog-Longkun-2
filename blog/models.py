@@ -27,6 +27,7 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
+
 @receiver(post_delete, sender=BlogPost)
 def submission_delete(sender, instance, *args, **kwargs):
     instance.image.delete(False)
