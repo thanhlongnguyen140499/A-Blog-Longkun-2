@@ -1,16 +1,7 @@
 {% extends 'base.html' %}
-
-
+{% load static %}
 {% block content %}
-    <style type="text/css">
-        .card {
-            max-width: 700px;
-        }
-        .container {
-            padding: 20px;
-        }
-    </style>
-
+<link rel="stylesheet" href="{% static 'blog/css/card.css' %}">
     <div class="container">
         <div class="row">
 

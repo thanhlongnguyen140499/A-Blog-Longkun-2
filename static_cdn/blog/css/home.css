@@ -11,7 +11,6 @@
 }
 
 .blog-post-container{
-    background-color: #fff;
     margin-bottom: 20px;
     width: 100%;
 }
@@ -26,4 +25,7 @@
 
 .right-column{
     padding:0px;
+}
+.lead{
+    font-size: 17px;
 }

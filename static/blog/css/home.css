@@ -11,15 +11,12 @@
 }
 
 .blog-post-container{
-    background-color: #fff;
     margin-bottom: 20px;
     width: 100%;
-    border: 1px solid #000;
 }
 .create-post-bar{
     background-color: #fff;
     margin-bottom:20px;
-    border: 1px solid #000;
 }
 
 .left-column{
@@ -28,4 +25,7 @@
 
 .right-column{
     padding:0px;
+}
+.lead{
+    font-size: 17px;
 }
