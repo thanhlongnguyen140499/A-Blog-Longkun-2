@@ -2,12 +2,14 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'blog/css/card.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/image-hover.css' %}">
     <div class="container">
         <div class="row">
-
             <!-- Blog post -->
             <div class="card m-auto shadow-lg">
-                <img class="card-img-top" src="{{blog_post.image.url}}" alt="post-image">
+                <figure>
+                    <img class=" card-img-top" src="{{blog_post.image.url}}" alt="post-image">
+                </figure>
                 <div class="card-body my-2">
                     <h2 class="card-title">{{blog_post.title}}</h2>
                     <p class="card-text">{{blog_post.body|safe}}</p>

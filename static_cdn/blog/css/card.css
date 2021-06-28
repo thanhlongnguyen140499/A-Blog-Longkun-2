@@ -3,9 +3,9 @@
     width: 100%;
     border-radius: 20px;    
     /* border-width: 0px; */;
-    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
-    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+    /* -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 5px;
+    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 5px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 5px; */
 }
 .card-body{
     padding: 20px;

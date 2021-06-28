@@ -1,5 +1,6 @@
 from operator import pos
 from django.db.models.query import QuerySet
+from django.http import HttpResponse
 from blog.models import BlogPost
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
@@ -45,9 +46,13 @@ def edit_blog_view(request, slug):
 
     user = request.user
     if not user.is_authenticated:
-        return redirect('must_authenticated')
+        return redirect('must_authenticated')   
 
     blog_post = get_object_or_404(BlogPost, slug=slug)
+
+    if blog_post.author != user:
+        return HttpResponse('You are not allowed here and you know that. Opps!')
+
     if request.POST:
         form = UpdateBlogPostForm(request.POST or None, request.FILES or None, instance=blog_post)
         if form.is_valid():

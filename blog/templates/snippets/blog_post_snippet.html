@@ -1,12 +1,13 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'blog/css/card.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/card-hover.css' %}">
 {% if blog_post %}
 <div class="container">
 	<div class="row">
 		<!-- Blog Post -->
 		<div class="card m-auto shadow-lg">
 			<a href="{% url 'blog:detail_blog' post.slug %}">
-				<img class="card-img-top" src="{{blog_post.image.url}}">
+				<img class="img card-img-top" src="{{blog_post.image.url}}">
 			</a>
 			<div class="card-body mt-2 mb-2">
 				<a href="{% url 'blog:detail_blog' post.slug %}">
@@ -38,3 +39,10 @@
 </div>
 
 {% endif %}
+
+    <!-- <div class="container">
+        <img src="img_avatar.png" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">Hello World</div>
+        </div>
+      </div>s -->

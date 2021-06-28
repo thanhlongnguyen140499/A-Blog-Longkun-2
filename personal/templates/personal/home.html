@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'blog/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'blog/scss/test.scss' %}">
 <!-- main content -->
 <div class="container">
 	<div class="row">
@@ -11,7 +12,7 @@
 
 			<!-- Top 'create post' bar -->
 			<div class="d-lg-none mb-3">
-				<div class="card m-auto d-flex flex-column p-3">
+				<div class="card m-auto d-flex flex-column p-3 shadow-lg">
                     <img src="{% static 'company-logo.png' %}" alt="company-logo" class="company-logo" width="72" height="72">
 					<p class="lead">In this course you'll learn how to build a simple blog with user registration and blog CRUD functionality. Django is a powerful 
 	  					framework and you'll see why in this course.</p>
@@ -33,9 +34,9 @@
 				</div>
 			{% endif %}
 			<!-- End Blog posts-->
-
-		<!-- Pagination -->
 		
+		<!-- Pagination -->
+		{% include 'snippets/blog_post_pagination.html' with blog_posts=blog_posts %}
 
 		</div>
 		<!-- end blog feed -->
@@ -53,10 +54,9 @@
 		
 		</div>
 		<!-- end Right 'create post' column  -->
-
-
-
+		  
 	</div>
 </div>
+
 
 {% endblock content %}
